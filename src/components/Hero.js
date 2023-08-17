@@ -30,13 +30,22 @@ export default function Header({ color }) {
         />
       </Heading>
 
-      <Container maxW={"3xl"} id="hero" h="100vh">
+      <Container
+        maxW={"3xl"}
+        id="hero"
+        h="100vh"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Stack
           as={Box}
           textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
-          pb={{ base: 20, md: 36 }}
-          pt={{ base: 36, md: 52 }}
+          // pb={{ base: 20, md: 36 }}
+          // pt={{ base: 36, md: 52 }}
         >
           <Heading
             fontWeight={600}

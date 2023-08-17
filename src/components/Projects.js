@@ -15,6 +15,7 @@ import {
   Badge,
   Link,
   Center,
+  Flex,
 } from "@chakra-ui/react";
 // import { Fade } from "react-reveal";
 import { useState } from "react";
@@ -68,36 +69,52 @@ export default function Projects({ color }) {
   ];
   const otherProjects = [
     {
-      name: "PROJECT Aasd",
-      description: "Description",
-      tags: ["Category 1"],
-      buttons: [{ text: "Link", href: "https://example.com" }],
-      badges: [{ text: "Badges", colorScheme: "blue" }],
+      name: "Delivergoo App",
+      description: "Multi-Restaurant Application System",
+      tags: ["Mobile", "Web"],
+      buttons: [{ text: "Link", href: "https://deliveryenpueblos.es/" }],
+      badges: [
+        { text: "Flutter", colorScheme: "cyan" },
+        { text: "Laravel", colorScheme: "red" },
+        { text: "Reactjs", colorScheme: "blue" },
+        { text: "Firebase", colorScheme: "orange" },
+      ],
     },
     {
-      name: "PROJECT Aasd",
-      description: "Description",
-      tags: ["Category 1"],
-      buttons: [{ text: "Link", href: "https://example.com" }],
-      badges: [{ text: "Badges", colorScheme: "blue" }],
+      name: "Personal Loans Quote Calculator ",
+      description: "versatile personal loans calculator",
+      tags: ["Web"],
+      buttons: [],
+      badges: [
+        { text: "Laravel", colorScheme: "red" },
+        { text: "VueJs", colorScheme: "green" },
+        { text: "PHP", colorScheme: "blue" },
+        { text: "tailwindCSS", colorScheme: "cyan" },
+      ],
     },
     {
-      name: "PROJECT Aasd",
-      description: "Description",
-      tags: ["Category 1"],
-      buttons: [{ text: "Link", href: "https://example.com" }],
-      badges: [{ text: "Badges", colorScheme: "blue" }],
+      name: "Transport Management System ",
+      description:
+        "Revamped internal logistics, efficiently managed vehicle fleet, ",
+      tags: ["Web"],
+      buttons: [],
+      badges: [
+        { text: "Laravel", colorScheme: "red" },
+        { text: "ReactJs", colorScheme: "cyan" },
+        { text: "PHP", colorScheme: "blue" },
+        { text: "tailwindCSS", colorScheme: "cyan" },
+      ],
     },
   ];
   const options2 = [
     {
-      value: "Category 1",
+      value: "Web",
     },
     {
-      value: "Category 2",
+      value: "Mobile",
     },
     {
-      value: "Category 3",
+      value: "Wordpress Plugin",
     },
   ];
   const [selected, setSelected] = useState("All");
@@ -152,13 +169,13 @@ export default function Projects({ color }) {
                         </a>
                       ))}
                     </HStack> */}
-                    <HStack pt={2} spacing={2}>
+                    <Flex justifyContent="flex-start" flexWrap="wrap" gap="5px">
                       {project.badges.map((badge) => (
                         <Badge key={badge.text} colorScheme={badge.colorScheme}>
                           {badge.text}
                         </Badge>
                       ))}
-                    </HStack>
+                    </Flex>
                   </CardBody>
                 </Stack>
               </Card>
@@ -217,17 +234,20 @@ export default function Projects({ color }) {
                             </Link>
                           ))}
                         </HStack>
-                        <HStack flexWrap="wrap" pt={4} spacing={2}>
+                        <Flex
+                          justifyContent="flex-start"
+                          flexWrap="wrap"
+                          gap="5px"
+                        >
                           {other.badges.map((badge) => (
                             <Badge
-                              my={2}
                               key={badge.text}
                               colorScheme={badge.colorScheme}
                             >
                               {badge.text}
                             </Badge>
                           ))}
-                        </HStack>
+                        </Flex>
                       </CardBody>
                     </Stack>
                   </Card>
