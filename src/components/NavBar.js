@@ -14,7 +14,13 @@ import {
   HStack,
   Link,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
+import {
+  MoonIcon,
+  SunIcon,
+  HamburgerIcon,
+  DownloadIcon,
+} from "@chakra-ui/icons";
+
 import { useState } from "react";
 import profile from "../data/Profile";
 // import ProfileArray from "./ProfileArray";
@@ -63,6 +69,14 @@ export default function Nav({ color }) {
       ? setScroll(true)
       : setScroll(false);
 
+  const handleDownload = () => {
+    // Simulando la descarga del archivo
+    const downloadLink = document.createElement("a");
+    downloadLink.href = "../assets/alejandro_cv.pdf"; // Cambia la ruta a la ubicación real de tu CV
+    downloadLink.download = "Alejandro_Padilla_CV.pdf"; // Cambia el nombre del archivo si lo deseas
+    downloadLink.click();
+  };
+
   window.addEventListener("scroll", changeScroll);
 
   const TbLetterComponents = [];
@@ -99,6 +113,9 @@ export default function Nav({ color }) {
           <Stack direction={"row"} spacing={7}>
             {isLargerThanMD ? (
               <>
+                <Button variant="ghost" onClick={handleDownload}>
+                  <DownloadIcon />
+                </Button>
                 <Button variant="ghost" onClick={scrollToAbout}>
                   About
                 </Button>
